@@ -20,7 +20,7 @@ namespace SistemaInscripcion.Reporte
         private void FrmReportes_Load(object sender, EventArgs e)
         {
 
-            this.reportViewer1.RefreshReport();
+            this.reportViewer.RefreshReport();
         }
     }
 }

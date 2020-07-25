@@ -983,6 +983,35 @@ SELECT ID, IdTipoUsuario, Usuario, Password, Nombre, Permisos, Observaciones, Cr
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dsEstudiantesPorCarreraTableAdapter" GeneratorDataComponentClassName="dsEstudiantesPorCarreraTableAdapter" Name="dsEstudiantesPorCarrera" UserDataComponentName="dsEstudiantesPorCarreraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cnn (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+	e.Matricula,
+	e.Nombre,
+	e.Apellido,
+	c.Descripcion [Carrera]
+FROM tblEstudiantes e
+INNER JOIN tblCarreras c
+	ON c.ID = e.IdCarrera
+ORDER BY
+	e.IdCarrera,
+	e.Matricula</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Matricula" DataSetColumn="Matricula" />
+              <Mapping SourceColumn="Nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="Apellido" DataSetColumn="Apellido" />
+              <Mapping SourceColumn="Carrera" DataSetColumn="Carrera" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1418,6 +1447,34 @@ SELECT ID, IdTipoUsuario, Usuario, Password, Nombre, Permisos, Observaciones, Cr
               <xs:element name="CreatedAt" msprop:Generator_ColumnVarNameInTable="columnCreatedAt" msprop:Generator_ColumnPropNameInRow="CreatedAt" msprop:Generator_ColumnPropNameInTable="CreatedAtColumn" msprop:Generator_UserColumnName="CreatedAt" type="xs:dateTime" minOccurs="0" />
               <xs:element name="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_UserColumnName="CreatedBy" type="xs:int" minOccurs="0" />
               <xs:element name="Inactivo" msprop:Generator_ColumnVarNameInTable="columnInactivo" msprop:Generator_ColumnPropNameInRow="Inactivo" msprop:Generator_ColumnPropNameInTable="InactivoColumn" msprop:Generator_UserColumnName="Inactivo" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dsEstudiantesPorCarrera" msprop:Generator_TableClassName="dsEstudiantesPorCarreraDataTable" msprop:Generator_TableVarName="tabledsEstudiantesPorCarrera" msprop:Generator_RowChangedName="dsEstudiantesPorCarreraRowChanged" msprop:Generator_TablePropName="dsEstudiantesPorCarrera" msprop:Generator_RowDeletingName="dsEstudiantesPorCarreraRowDeleting" msprop:Generator_RowChangingName="dsEstudiantesPorCarreraRowChanging" msprop:Generator_RowEvHandlerName="dsEstudiantesPorCarreraRowChangeEventHandler" msprop:Generator_RowDeletedName="dsEstudiantesPorCarreraRowDeleted" msprop:Generator_RowClassName="dsEstudiantesPorCarreraRow" msprop:Generator_UserTableName="dsEstudiantesPorCarrera" msprop:Generator_RowEvArgName="dsEstudiantesPorCarreraRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Matricula" msprop:Generator_ColumnVarNameInTable="columnMatricula" msprop:Generator_ColumnPropNameInRow="Matricula" msprop:Generator_ColumnPropNameInTable="MatriculaColumn" msprop:Generator_UserColumnName="Matricula" type="xs:int" />
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" msprop:Generator_UserColumnName="Nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Apellido" msprop:Generator_ColumnVarNameInTable="columnApellido" msprop:Generator_ColumnPropNameInRow="Apellido" msprop:Generator_ColumnPropNameInTable="ApellidoColumn" msprop:Generator_UserColumnName="Apellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Carrera" msprop:Generator_ColumnVarNameInTable="columnCarrera" msprop:Generator_ColumnPropNameInRow="Carrera" msprop:Generator_ColumnPropNameInTable="CarreraColumn" msprop:Generator_UserColumnName="Carrera">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

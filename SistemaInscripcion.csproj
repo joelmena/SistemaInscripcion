@@ -157,6 +157,9 @@
     <Compile Include="FrmTest.Designer.cs">
       <DependentUpon>FrmTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="INF518_TESTDataSet.cs">
+      <DependentUpon>INF518_TESTDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="INF518_TESTDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -418,6 +421,8 @@
     <None Include="Resources\register32.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\print16.png" />
+    <None Include="Resources\print32.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
