@@ -115,6 +115,12 @@
     <Compile Include="Caja\FrmCaja.Designer.cs">
       <DependentUpon>FrmCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caja\FrmCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\FrmCobro.Designer.cs">
+      <DependentUpon>FrmCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Carrera\FrmConsultaCarreras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     <EmbeddedResource Include="Caja\FrmCaja.resx">
       <DependentUpon>FrmCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Caja\FrmCobro.resx">
+      <DependentUpon>FrmCobro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Carrera\FrmConsultaCarreras.resx">
       <DependentUpon>FrmConsultaCarreras.cs</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +279,7 @@
     <EmbeddedResource Include="Inscripcion\FrmRegistroInscripciones.resx">
       <DependentUpon>FrmRegistroInscripciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\RptFactura.rdlc" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +303,7 @@
       <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\RptEstudiantes.rdlc" />
+    <EmbeddedResource Include="Reporte\RptInscripciones.rdlc" />
     <EmbeddedResource Include="Seccion\FrmConsultarSecciones.resx">
       <DependentUpon>FrmConsultarSecciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,6 +434,9 @@
   <ItemGroup>
     <None Include="Resources\print16.png" />
     <None Include="Resources\print32.png" />
+    <None Include="Resources\money32.png" />
+    <None Include="Resources\money16.png" />
+    <None Include="Resources\accept32.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

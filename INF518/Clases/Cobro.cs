@@ -90,6 +90,33 @@ namespace INF518.Clases
             }
             return dt;
         }
+
+        public DataTable Factura(string filtro = "")
+        {
+            this.Command.CommandType = CommandType.StoredProcedure;
+            this.Command.CommandText = "sp_factura";
+            this.Command.Parameters.Clear();
+            this.Command.Parameters.AddWithValue("@idEstudiante", this.IdEstudiante);
+            this.Command.Connection = this.Connection;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(this.Command);
+
+            try
+            {
+                this.Connection.Open();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                this.Connection.Close();
+            }
+            return dt;
+        }
         #endregion
     }
 }

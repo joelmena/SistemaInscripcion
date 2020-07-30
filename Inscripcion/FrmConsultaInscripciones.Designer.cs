@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnInscribir = new System.Windows.Forms.Button();
             this.dgInscripciones = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,13 +45,13 @@
             this.colHoraFin2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.lbxEstudiantes = new System.Windows.Forms.ListBox();
-            this.btnInscribir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInscripciones)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnPrint);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnInscribir);
             this.groupBox1.Controls.Add(this.dgInscripciones);
@@ -61,6 +63,19 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnPrint.Image = global::SistemaInscripcion.Properties.Resources.print32;
+            this.btnPrint.Location = new System.Drawing.Point(9, 373);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(101, 40);
+            this.btnPrint.TabIndex = 7;
+            this.btnPrint.Text = "Imprimir";
+            this.btnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -70,6 +85,19 @@
             this.label2.Size = new System.Drawing.Size(92, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "Inscripciones";
+            // 
+            // btnInscribir
+            // 
+            this.btnInscribir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnInscribir.Image = global::SistemaInscripcion.Properties.Resources.register32;
+            this.btnInscribir.Location = new System.Drawing.Point(148, 373);
+            this.btnInscribir.Name = "btnInscribir";
+            this.btnInscribir.Size = new System.Drawing.Size(101, 40);
+            this.btnInscribir.TabIndex = 4;
+            this.btnInscribir.Text = "Inscribir";
+            this.btnInscribir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInscribir.UseVisualStyleBackColor = true;
+            this.btnInscribir.Click += new System.EventHandler(this.btnInscribir_Click);
             // 
             // dgInscripciones
             // 
@@ -187,19 +215,6 @@
             this.lbxEstudiantes.TabIndex = 0;
             this.lbxEstudiantes.Click += new System.EventHandler(this.lbxEstudiantes_Click);
             // 
-            // btnInscribir
-            // 
-            this.btnInscribir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.btnInscribir.Image = global::SistemaInscripcion.Properties.Resources.register32;
-            this.btnInscribir.Location = new System.Drawing.Point(148, 373);
-            this.btnInscribir.Name = "btnInscribir";
-            this.btnInscribir.Size = new System.Drawing.Size(101, 40);
-            this.btnInscribir.TabIndex = 4;
-            this.btnInscribir.Text = "Inscribir";
-            this.btnInscribir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInscribir.UseVisualStyleBackColor = true;
-            this.btnInscribir.Click += new System.EventHandler(this.btnInscribir_Click);
-            // 
             // FrmConsultaInscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDia2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoraInicio2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHoraFin2;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

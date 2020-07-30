@@ -36,8 +36,6 @@
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnCobrar = new System.Windows.Forms.Button();
-            this.lbMontoDevuelto = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.lbBalance = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
             this.lbMatricula = new System.Windows.Forms.Label();
@@ -45,14 +43,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgInscripciones = new System.Windows.Forms.DataGridView();
-            this.lbTotal = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.colIdEstudiante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIdInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBalance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colObservaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInscripciones)).BeginInit();
@@ -121,8 +119,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnCobrar);
-            this.groupBox2.Controls.Add(this.lbMontoDevuelto);
-            this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.lbBalance);
             this.groupBox2.Controls.Add(this.lbNombre);
             this.groupBox2.Controls.Add(this.lbMatricula);
@@ -140,6 +136,7 @@
             // btnCobrar
             // 
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.btnCobrar.Image = global::SistemaInscripcion.Properties.Resources.money32;
             this.btnCobrar.Location = new System.Drawing.Point(583, 52);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(101, 40);
@@ -148,26 +145,6 @@
             this.btnCobrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCobrar.UseVisualStyleBackColor = true;
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
-            // 
-            // lbMontoDevuelto
-            // 
-            this.lbMontoDevuelto.BackColor = System.Drawing.SystemColors.Info;
-            this.lbMontoDevuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lbMontoDevuelto.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lbMontoDevuelto.Location = new System.Drawing.Point(341, 65);
-            this.lbMontoDevuelto.Name = "lbMontoDevuelto";
-            this.lbMontoDevuelto.Size = new System.Drawing.Size(134, 21);
-            this.lbMontoDevuelto.TabIndex = 12;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label10.Location = new System.Drawing.Point(268, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 15);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Devuelto:";
             // 
             // lbBalance
             // 
@@ -183,7 +160,7 @@
             // lbNombre
             // 
             this.lbNombre.BackColor = System.Drawing.SystemColors.Info;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.lbNombre.Location = new System.Drawing.Point(253, 16);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(258, 21);
@@ -253,27 +230,6 @@
             this.dgInscripciones.TabIndex = 2;
             this.dgInscripciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInscripciones_CellContentClick);
             // 
-            // lbTotal
-            // 
-            this.lbTotal.BackColor = System.Drawing.SystemColors.Info;
-            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.lbTotal.ForeColor = System.Drawing.Color.Lime;
-            this.lbTotal.Location = new System.Drawing.Point(634, 400);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(68, 21);
-            this.lbTotal.TabIndex = 14;
-            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label12.Location = new System.Drawing.Point(589, 400);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(39, 15);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Total";
-            // 
             // colIdEstudiante
             // 
             this.colIdEstudiante.DataPropertyName = "IdEstudiante";
@@ -324,6 +280,27 @@
             this.colObservaciones.Name = "colObservaciones";
             this.colObservaciones.ReadOnly = true;
             // 
+            // lbTotal
+            // 
+            this.lbTotal.BackColor = System.Drawing.SystemColors.Info;
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.lbTotal.ForeColor = System.Drawing.Color.Lime;
+            this.lbTotal.Location = new System.Drawing.Point(634, 400);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(68, 21);
+            this.lbTotal.TabIndex = 14;
+            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.label12.Location = new System.Drawing.Point(589, 400);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 15);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Total";
+            // 
             // FrmCaja
             // 
             this.AcceptButton = this.btnFiltro;
@@ -340,6 +317,8 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(730, 469);
             this.Name = "FrmCaja";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Caja";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -361,8 +340,6 @@
         private System.Windows.Forms.TextBox txtMonto;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnCobrar;
-        private System.Windows.Forms.Label lbMontoDevuelto;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lbBalance;
         private System.Windows.Forms.Label lbNombre;
         private System.Windows.Forms.Label lbMatricula;

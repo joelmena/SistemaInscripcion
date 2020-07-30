@@ -85,19 +85,19 @@
             // inscriocionesToolStripMenuItem
             // 
             this.inscriocionesToolStripMenuItem.Name = "inscriocionesToolStripMenuItem";
-            this.inscriocionesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.inscriocionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inscriocionesToolStripMenuItem.Text = "&Inscripciones";
             this.inscriocionesToolStripMenuItem.Click += new System.EventHandler(this.inscriocionesToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(140, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // cerrarToolStripMenuItem
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cerrarToolStripMenuItem.Text = "&Cerrar";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
@@ -168,6 +168,7 @@
             // 
             // grupoDeEstudiantesToolStripMenuItem
             // 
+            this.grupoDeEstudiantesToolStripMenuItem.Enabled = false;
             this.grupoDeEstudiantesToolStripMenuItem.Name = "grupoDeEstudiantesToolStripMenuItem";
             this.grupoDeEstudiantesToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.grupoDeEstudiantesToolStripMenuItem.Text = "&Grupo de Estudiantes";
@@ -199,26 +200,28 @@
             // 
             // grupoDeUsuariosToolStripMenuItem
             // 
+            this.grupoDeUsuariosToolStripMenuItem.Enabled = false;
             this.grupoDeUsuariosToolStripMenuItem.Name = "grupoDeUsuariosToolStripMenuItem";
-            this.grupoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.grupoDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.grupoDeUsuariosToolStripMenuItem.Text = "&Grupo de Usuarios";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "&Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(168, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // backupToolStripMenuItem
             // 
+            this.backupToolStripMenuItem.Enabled = false;
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.backupToolStripMenuItem.Text = "&Backup";
             // 
             // utilitariosToolStripMenuItem

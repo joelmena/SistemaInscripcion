@@ -12,13 +12,15 @@ namespace SistemaInscripcion.Caja
 {
     public partial class FrmCaja : Form
     {
-        INF518.Clases.Usuario user;
+        //INF518.Clases.Usuario user;
         INF518.Clases.Cobro cobro;
+        private DataTable dt;
         public FrmCaja(INF518.Clases.Usuario user)
         {
             InitializeComponent();
             user = new INF518.Clases.Usuario();
             cobro = new INF518.Clases.Cobro();
+            dt = new DataTable();
 
             dgInscripciones.AutoGenerateColumns = false;
             ActualizarDataGridView();
@@ -34,17 +36,38 @@ namespace SistemaInscripcion.Caja
         {
             cobro.Monto = Convert.ToDecimal(txtMonto.Text);
             decimal devuelta = cobro.Cobrar();
-            if (devuelta < 0)
+            decimal balance = Convert.ToDecimal(lbBalance.Text);
+
+            var est = new INF518.Clases.Estudiante
+            {
+                ID = cobro.IdEstudiante,
+                Matricula = Convert.ToInt32(lbMatricula.Text),
+                Nombre = lbNombre.Text,
+                Balance = Convert.ToDecimal(lbBalance.Text),
+            };
+
+            FrmCobro frm = new FrmCobro(balance, cobro.Monto, est);
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            if (devuelta >= 0)
+            {
+                frm.ShowDialog();
+                frm.Dispose();
+                Limpiar();
+                ActualizarDataGridView();
+            }
+            else
             {
                 MessageBox.Show("Error", "Cobro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(devuelta.ToString(), "Cobro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            MessageBox.Show(devuelta.ToString(), "Cobro", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
         #region
         private void ActualizarDataGridView(string filtro = "")
         {
+            //this.dt = 
             dgInscripciones.DataSource = cobro.Cuentas(filtro);
             lbTotal.Text = Convert.ToInt32(dgInscripciones.RowCount).ToString();
         }
@@ -56,6 +79,7 @@ namespace SistemaInscripcion.Caja
             lbMatricula.Text = string.Empty;
             lbNombre.Text = string.Empty;
             lbBalance.Text = string.Empty;
+            txtMonto.Text = string.Empty;
         }
 
         private void ActualizarFormulario()

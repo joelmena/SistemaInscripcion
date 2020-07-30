@@ -56,6 +56,7 @@ namespace SistemaInscripcion.Estudiante
         {
             var filtro = txtFiltro.Text;
             ActualizarGridView(filtro);
+            Limpiar();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -70,7 +71,7 @@ namespace SistemaInscripcion.Estudiante
 
             frm.reportViewer.Reset();
 
-            frm.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("dsEstudiantesPorCarrera", dt));
+            frm.reportViewer.LocalReport.DataSources.Add(new ReportDataSource("dsEstudiantes", dt));
             frm.reportViewer.LocalReport.ReportEmbeddedResource = "SistemaInscripcion.Reporte.RptEstudiantes.rdlc";
             frm.reportViewer.LocalReport.SetParameters(parametros);
 
@@ -85,8 +86,14 @@ namespace SistemaInscripcion.Estudiante
         #region METODOS/FUNCIONES
         private void ActualizarGridView(string filtro = "")
         {
-            dgEstudiantes.DataSource = est.Estudiantes(filtro);
+            this.dt = est.Estudiantes(filtro);
+            dgEstudiantes.DataSource = this.dt;
             txtTotal.Text = dgEstudiantes.RowCount.ToString();
+        }
+
+        private void Limpiar()
+        {
+            txtFiltro.Text = string.Empty;
         }
         #endregion
 

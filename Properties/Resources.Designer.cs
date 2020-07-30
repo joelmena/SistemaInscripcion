@@ -73,6 +73,16 @@ namespace SistemaInscripcion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap accept32 {
+            get {
+                object obj = ResourceManager.GetObject("accept32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add16 {
             get {
                 object obj = ResourceManager.GetObject("add16", resourceCulture);
@@ -246,6 +256,26 @@ namespace SistemaInscripcion.Properties {
         internal static System.Drawing.Bitmap lupa32 {
             get {
                 object obj = ResourceManager.GetObject("lupa32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money16 {
+            get {
+                object obj = ResourceManager.GetObject("money16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money32 {
+            get {
+                object obj = ResourceManager.GetObject("money32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
